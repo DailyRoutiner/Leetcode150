@@ -1,6 +1,8 @@
 import java.util.*;
 
-public class ContainsDuplicate_20220912 {
+// https://leetcode.com/problems/contains-duplicate/
+// 20220912
+public class ContainsDuplicate {
 
     public static void main(String[] args) {
         

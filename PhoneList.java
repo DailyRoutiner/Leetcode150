@@ -1,6 +1,8 @@
 import java.util.*;
 
-class PhoneList_20220917 {
+// https://school.programmers.co.kr/learn/courses/30/lessons/42577
+// 20220917
+class PhoneList {
 
     public static void main(String[] args){
         String[] str = {"119", "97674223", "1195524421"};
