@@ -22,7 +22,7 @@ public class TwoSum {
                 break;
             }
             else{
-                map.put(nums[i], i);
+                map.put(nums[i], i);    // value, index
             }
         }
         return ans;
