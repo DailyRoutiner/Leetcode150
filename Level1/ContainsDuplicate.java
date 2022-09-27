@@ -1,3 +1,4 @@
+package Level1;
 import java.util.*;
 
 // https://leetcode.com/problems/contains-duplicate/
