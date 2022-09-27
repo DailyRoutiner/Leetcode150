@@ -1,4 +1,3 @@
-import java.util.regex.*; 
 
 public class ValidPalindrome {    
 
