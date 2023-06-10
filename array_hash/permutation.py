@@ -9,7 +9,7 @@ b1 = 'dog'
 print(a1.replace(" ", ""))
 
 
-def anagram_count( s1, s2) -> bool:
+def anagram_string( s1, s2) -> bool:
     
 
     if len(s1) != len(s2):
