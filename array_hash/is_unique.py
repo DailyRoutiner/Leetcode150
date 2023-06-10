@@ -1,10 +1,11 @@
 def is_unique(string):
     checker = 0
     for char in string:
-        val = ord(char) - ord('a')
-        if (checker & (1 << val)) > 0:
+        #print(ord(char) , ord('a'), ord('ㄱ'))
+        val = ord(char) - ord('a')      # 97 - 97
+        if (checker & (val >> 1)) > 0:
             return False
-        checker |= (1 << val)
+        checker |= (val >> 1)
     return True
 
 
