@@ -5,7 +5,7 @@ class ListNode:
         self.val = val
         self.next = next
 class Solution:
-    def reverseList(self, head: [ListNode]) -> [ListNode]:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
         prev, curr = None, head
 
