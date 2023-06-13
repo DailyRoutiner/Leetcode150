@@ -7,7 +7,7 @@ def rotate(matrix):
     origin_height = len(matrix)
     origin_width = len(matrix[0])
 
-    rotated_image = [[0] * origin_height for _ in range(origin_width)]
+    rotated_image = [[0] * origin_height for _ in range(origin_width)] # 이 구문을 사용하는 방식이 유용하다
 
     for i in range(origin_height):
         for j in range(origin_width):
