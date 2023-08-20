@@ -44,6 +44,24 @@ for i in range(10):
     print(fibonacci(i), end=' ')
 
 # Quiz 6
-t = input().split(',')
-print(sum(map(int, t)))
+#t = input().split(',')
+#print(sum(map(int, t)))
+#test code: 65,45,2,3,45,8
 
+
+# Quiz 7
+s = input("Enter a number(2~9):")
+if int(s) < 2 and 9 > int(s):
+    print("Wrong number")
+else:
+    for i in range(1, 10):
+        print(s, "*", i, "=", int(s)*i, end=' ')
+
+# Quiz 8
+def reverse_list():
+    with open("quiz/quiz8.txt", "r") as f:
+        lines = f.readlines()
+        for line in lines:
+            f.write(line[::-1])
+
+reverse_list()
