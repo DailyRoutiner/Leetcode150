@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "FactoryPattern",
+            "request": "launch",
+            "mainClass": "DesignPattern.FactoryPattern",
+            "projectName": "Leetcode150_2702ac4e"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-FirstdemoApplication<firstdemo>",
             "request": "launch",
             "cwd": "${workspaceFolder}",

@@ -1,12 +1,6 @@
 # 비정렬 연결리스트에서 중복 문자를 제거하는 코드를 작성하라
 # 임시 버퍼가 허용되지 않는 상황에서 이 문제를 어떻게 해결할 수 있겠는가?
 
-# Input: 1 -> 2 -> 3 -> 3 -> 4 -> 4 -> 5
-# Output: 1 -> 2 -> 3 -> 4 -> 5
-
-# Input: 1 -> 1 -> 1 -> 2 -> 3
-# Output: 1 -> 2 -> 3
-
 class Node:
     def __init__(self, data):
         self.data = data
@@ -17,10 +11,10 @@ def remove_duplicate(node):
     if not node:
         return node
 
-    curr = node
-    while curr:
-        runner = curr
-        while runner.next:
+    curr = node # current node to check duplicates from the next node to the end of the list
+    while curr: # check duplicates for each node in the list until the end of the list is reached
+        runner = curr # runner node to check duplicates from the next node to the end of the list for the current node in the list
+        while runner.next: # check duplicates for each node in the list until the end of the list is reached for the current node in the list
             if runner.next.data == curr.data:
                 runner.next = runner.next.next
             else:
@@ -39,7 +33,7 @@ node.next.next.next.next.next = Node(4)
 node.next.next.next.next.next.next = Node(5)
 
 node = remove_duplicate(node)
-while node is not None:
+while node:
     print(node.data)
     node = node.next
 
