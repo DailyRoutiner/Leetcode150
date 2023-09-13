@@ -47,11 +47,10 @@ class Node:
         self.next = None
     
     def append(self, data):
-        end = Node(data)
         curr = self
         while curr.next:
             curr = curr.next
-        curr.next = end
+        curr.next = Node(data)
         
     def print(self):
         curr = self
