@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CompressBad_1_5",
+            "request": "launch",
+            "mainClass": "array_hash.CompressBad_1_5",
+            "projectName": "Leetcode150_2702ac4e"
+        },
+        {
+            "type": "java",
             "name": "FactoryPattern",
             "request": "launch",
             "mainClass": "DesignPattern.FactoryPattern",

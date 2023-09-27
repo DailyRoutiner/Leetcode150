@@ -13,6 +13,10 @@ def permutation(s1:str, s2:str):
         if letters[ord(c)] < 0:
             return False
         
+    print(ord('a'))
+    print(ord('A'))
+    print(ord('z'))
+    print(ord('Z'))
     return True
 
 # test code
