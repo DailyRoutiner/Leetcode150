@@ -1,3 +1,5 @@
+package Level1;
+
 public class CompressBad {
     public static void main(String[] args) {
         

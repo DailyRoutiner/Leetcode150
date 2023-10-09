@@ -1,3 +1,5 @@
+package Level1;
+
 public class ReplaceSpaces {
 // Assume string has sufficient free space at the end
 public static void replaceSpaces(char[] str, int trueLength) {

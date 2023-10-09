@@ -11,10 +11,10 @@ def compress_string(string):
     
     for i in range(len(string)):
         count += 1
-        print(i , len(string))
+        #print(i , len(string))
         if i+1 >= len(string) or string[i] != string[i+1]:
-            compressed += string[i] + str(count)
-            print(compressed)
+            compressed += string[i] + str(count)    # immutable string 으로 인해 새로운 문자열이 계속 생성됨
+            #print(compressed)
             count=0
 
     # 압축 결과 문자열이 원래 문자열보다 길 경우 원래 문자열 반환
@@ -26,27 +26,62 @@ def compress_string(string):
 
 
 # 내 버전
-def compress_string1(str1):
-   
-   str_dict = character_string(str1)
-   compress_str = [ f"{k}{v}" for k, v in str_dict.items()]
-   print("".join(compress_str))
-
-
-def character_string(s1:str) -> dict:
-    last = ''
-    str_dict = {}
-    for c in s1: 
-        if c in str_dict and c == last: # 여기에 문제가 있음... 딕셔너리에 넣으면 안되네..
-            str_dict[c] += 1
+def compress_string1(s1):
+    size = countCompression(s1)
+    if size >= len(s1):
+        return s1
+    
+    arr = [0] * size
+    last = s1[0]
+    count = 1
+    index = 0
+    
+    for i in range(1, len(s1)):
+        if s1[i] == last:
+            count += 1
         else:
-            last = c
-            str_dict[c] = 1
-    return str_dict
+            index = setChar(arr, last, index, count)
+            last = s1[i]
+            count = 1
+        
+    index = setChar(arr, last, index, count)
+    return ''.join(arr)
 
+def setChar(arr, c, index, count):
+    arr[index] = c
+    index += 1
+    
+    for i in range(len(str(count))):
+        arr[index] = str(count)[i]
+        index += 1
+    
+    return index
 
-print(compress_string(a1))
+def countCompression(s1):
+    if not s1: return 0
+    last = s1[0]
+    size = 0
+    count = 0
 
+    for i in range(len(s1)):
+        count += 1
+        if last != s1[i]:
+            last = s1[i]
+            size += 1 + len(str(count))
+            count = 0
+    
+    size += 1 + len(str(count))
+    return size
 
+# test code
+print(compress_string(a1)) # a2b1c5a3
+print(compress_string("abc")) # abc
+print(compress_string("aabbcc")) # aabbcc
+print(compress_string("aabccccccaaa")) # a2b1c5a3
+
+print(compress_string1(a1)) # a2b1c5a3
+print(compress_string1("abc")) # abc
+print(compress_string1("aabbcc")) # aabbcc
+print(compress_string1("aabccccccaaa")) # a2b1c5a3
 
 
