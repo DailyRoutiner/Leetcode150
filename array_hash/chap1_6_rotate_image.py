@@ -7,6 +7,7 @@ def rotate(matrix):
     origin_height = len(matrix)
     origin_width = len(matrix[0])
 
+    # init rotated image
     rotated_image = [[0] * origin_height for _ in range(origin_width)] # 이 구문을 사용하는 방식이 유용하다
 
     for i in range(origin_height):
@@ -15,6 +16,24 @@ def rotate(matrix):
 
     return rotated_image
 
+# solution rotate in the book
+def rotate2(matrix:[[]], n:int):
+
+    for layer in range(n//2):
+        first = layer
+        last = n - 1 - layer
+
+        for t in range(first, last):
+            offset = t - first
+            top = matrix[first][t]
+            matrix[first][t] = matrix[last-offset][first]
+            matrix[last-offset][first] = matrix[last][last-offset]
+            matrix[last][last-offset] = matrix[t][last]
+            matrix[t][last] = top
+
+    return matrix
+
+# test code
 image = [
     [1, 2, 3 , 4],
     [5, 6, 7, 8],
@@ -23,8 +42,9 @@ image = [
 ]
 
 # 이미지 회전
-rotated_image = rotate(image)
+#rotated_image = rotate(image)
+rotated_image = rotate2(image, 4)
 
 # 회전된 이미지 출력
 for row in rotated_image:
-    print(row)   
+    print(row)
