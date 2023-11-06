@@ -19,12 +19,12 @@ def rotate(matrix):
 # solution rotate in the book
 def rotate2(matrix:[[]], n:int):
 
-    for layer in range(n//2):
+    for layer in range(n//2):  # 4*4 행렬이라면 2번만 돌면 된다.
         first = layer
         last = n - 1 - layer
 
         for t in range(first, last):
-            offset = t - first
+            offset = t - first # offset은 0, 1, 2, 3 last-offset은 3, 2, 1, 0
             top = matrix[first][t]
             matrix[first][t] = matrix[last-offset][first]
             matrix[last-offset][first] = matrix[last][last-offset]
