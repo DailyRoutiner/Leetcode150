@@ -1,4 +1,4 @@
-# 2.1 비정렬 연결리스트에서 중복 문자를 제거하는 코드를 작성하라
+# 비정렬 연결리스트에서 중복 문자를 제거하는 코드를 작성하라
 # 임시 버퍼가 허용되지 않는 상황에서 이 문제를 어떻게 해결할 수 있겠는가?
 
 class Node:
@@ -6,22 +6,22 @@ class Node:
         self.data = data
         self.next = None
 
-# def remove_duplicate(node:Node):
-#     dic = {}          # 임시 버퍼
-#     prev = None   
-#     while node:
-#         if node.data in dic.keys():
-#             prev.next = node.next 
-#         else:
-#             dic[node.data] = True
-#             prev = node
 
-#         node = node.next
+def remove_duplicate(node):
+    if not node:
+        return node
 
-def remove_duplicate(node:Node):
-    prev = None
+    curr = node # current node to check duplicates from the next node to the end of the list
+    while curr: # check duplicates for each node in the list until the end of the list is reached
+        runner = curr # runner node to check duplicates from the next node to the end of the list for the current node in the list
+        while runner.next: # check duplicates for each node in the list until the end of the list is reached for the current node in the list
+            if runner.next.data == curr.data:
+                runner.next = runner.next.next
+            else:
+                runner = runner.next
+        curr = curr.next
+    return node
     
-
 
 # test code
 node = Node(1)
